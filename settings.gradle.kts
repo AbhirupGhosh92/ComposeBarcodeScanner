@@ -13,7 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Gauntlet"
-include(":app")
+rootProject.name = "scanner"
 include(":scanner")
-include(":elements")
