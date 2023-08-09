@@ -27,9 +27,17 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
         getByName("debug") {
             isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
@@ -81,7 +89,7 @@ publishing{
         register<MavenPublication>("release"){
             groupId = "com.github.AbhirupGhosh92"
             artifactId = "compose-scanner-view"
-            version = "v1.0.0"
+            version = "v1.0.2"
 
 
             afterEvaluate {
