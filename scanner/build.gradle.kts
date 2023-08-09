@@ -24,16 +24,15 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
-
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+        }
+        getByName("debug") {
+            isMinifyEnabled = true
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -41,6 +40,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    flavorDimensions += listOf()
 }
 
 dependencies {
@@ -81,7 +81,8 @@ publishing{
         register<MavenPublication>("release"){
             groupId = "com.github.AbhirupGhosh92"
             artifactId = "compose-scanner-view"
-            version = "0.0.1"
+            version = "v1.0.0"
+
 
             afterEvaluate {
                 from(components["release"])
